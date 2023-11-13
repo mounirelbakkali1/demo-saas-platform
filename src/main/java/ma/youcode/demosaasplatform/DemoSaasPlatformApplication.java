@@ -21,7 +21,7 @@ public class DemoSaasPlatformApplication {
 
 
 
-	@Bean
+	//@Bean
 	CommandLineRunner runner(){
 		return args -> {
 			userRepository.save(User.builder().id(1).name("Mounir").build());
