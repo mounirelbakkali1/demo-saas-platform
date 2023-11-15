@@ -36,6 +36,7 @@ public class ConnectionProvider implements MultiTenantConnectionProvider, Hibern
     public Connection getConnection(String tenantIdentifier) throws SQLException {
         var connection = dataSource.getConnection();
         connection.setSchema(tenantIdentifier);
+        // connection.createStatement().execute("USE " + tenantIdentifier); instead of connection.setSchema(tenantIdentifier); when using MySQL
         log.info("Connection to tenant {} created", tenantIdentifier);
         return  connection;
     }
