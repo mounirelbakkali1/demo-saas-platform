@@ -21,7 +21,7 @@ public class TenantInterceptor implements HandlerInterceptor{
         if (tenantId != null) {
             TenantContext.setTenantId(tenantId);
         } else {
-            TenantContext.setTenantId("default");
+            TenantContext.setTenantId(TenantContext.DEFAULT_TENANT_ID);
         }
         return true;
     }
