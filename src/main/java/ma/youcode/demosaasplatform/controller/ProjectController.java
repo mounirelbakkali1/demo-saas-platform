@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import ma.youcode.demosaasplatform.dto.ProjectDto;
 import ma.youcode.demosaasplatform.service.IProjectService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ public class ProjectController {
     private final IProjectService projectService;
 
     @GetMapping
+    @Cacheable(cacheNames = "projects")
     public ResponseEntity<?> getProjects() {
         return ResponseEntity.ok(projectService.getAllProjects());
     }
