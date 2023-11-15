@@ -12,11 +12,11 @@ java {
 	sourceCompatibility = '17'
 }
 
-flyway {
+/*flyway {
 	url = 'jdbc:mysql://localhost:3306/demo_saas?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=GMT'
 	user = 'root'
 	password = ''
-}
+}*/
 
 
 configurations {
@@ -38,17 +38,19 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
-	implementation 'org.flywaydb:flyway-mysql'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	//implementation 'org.keycloak:keycloak-admin-client'
 	//implementation 'org.keycloak:keycloak-spring-security-adapter'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// mysql connector
-	implementation 'mysql:mysql-connector-java:8.0.26'
+	//implementation 'mysql:mysql-connector-java:8.0.26'
+	// postgresql driver
+	implementation 'org.postgresql:postgresql:42.2.23'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.testcontainers:postgresql'
 	testImplementation 'org.testcontainers:junit-jupiter'
 
 }
