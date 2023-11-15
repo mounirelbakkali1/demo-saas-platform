@@ -14,3 +14,7 @@ spring:
 #  driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}] tenantId=%X{tenantId:-}"
