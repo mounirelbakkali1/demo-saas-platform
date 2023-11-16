@@ -42,7 +42,7 @@ dependencies {
 	//implementation 'org.keycloak:keycloak-admin-client'
 	//implementation 'org.keycloak:keycloak-spring-security-adapter'
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// mysql connector
 	//implementation 'mysql:mysql-connector-java:8.0.26'
 	// postgresql driver

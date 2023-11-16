@@ -15,7 +15,7 @@ import java.util.Objects;
 public class TenantIdentifierResolver implements CurrentTenantIdentifierResolver, HibernatePropertiesCustomizer {
     @Override
     public String resolveCurrentTenantIdentifier() {
-        return Objects.requireNonNullElse(TenantContext.getTenantId(), "default_001");
+        return Objects.requireNonNullElse(TenantContext.getTenantId(), TenantContext.DEFAULT_TENANT_ID);
     }
 
     @Override

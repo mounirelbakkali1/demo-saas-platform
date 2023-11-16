@@ -1,20 +1,15 @@
 server:
   port: 8181
   servlet:
-      context-path: /api
+    context-path: /api
 spring:
   application:
     name: demo-saas-platform
   flyway:
     enabled: true
- # datasource:
- #   url: jdbc:mysql://localhost:3306/demo_saas_platform?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=GMT
- #   username: root
- #   password:
-#  driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
 
 logging:
   pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}] tenantId=%X{tenantId:-}"
+    level: "%5p [${spring.application.name:}] tenantId=%X{tenantId:-}"

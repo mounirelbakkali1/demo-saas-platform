@@ -21,7 +21,7 @@ public class TestDemoSaasPlatformApplication {
 
 	@Bean
 	@ServiceConnection
-	@RestartScope
+	//@RestartScope
 	public PostgreSQLContainer<?> mysqlContainer() {
 		return new PostgreSQLContainer<>("postgres:15");
 	}
