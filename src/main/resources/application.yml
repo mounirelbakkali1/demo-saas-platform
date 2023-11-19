@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: demo-saas-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: demo-saas-platform
+          uri: http://localhost:8181/api
+          predicates:
+            - Path=/api/**
+            - Host={tenantId}.localhost
+          filters:
+            - RemoveRequestHeader=X-TenantID
+            - AddRequestHeader=X-TenantID, {tenantId}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:}] tenantId=%X{tenantId:-}"
+
+multi-tenancy:
+  security:
+    client-id: demo-saas-api-gateway
+    client-secret: demo-saas-api-gateway-secret
+    issuer-uri: http://localhost:8181/realms/
